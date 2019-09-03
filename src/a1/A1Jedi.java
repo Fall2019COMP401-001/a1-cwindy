@@ -33,6 +33,7 @@ public class A1Jedi {
 		
 		int[] catalogCount = new int[count];
 		int[] custCount = new int[count];
+		int[] custItemCount = new int[count];
 		for(int i = 0; i < count; i++) {
 			catalogCount[i]=0;
 			custCount[i]=0;
@@ -44,6 +45,9 @@ public class A1Jedi {
 			scan.next(); scan.next();
 			
 			itemNum = scan.nextInt();
+			for(int j = 0; j<count; j++) {
+			custItemCount[j]=0;
+			}
 			
 			for(int j = 0; j<itemNum; j++) {
 				
@@ -52,11 +56,15 @@ public class A1Jedi {
 				for(int k = 0; k<count; k++) {
 					
 					if(itemName.equals(catalogName[k])) {
-						custCount[k] ++;
+						custItemCount[k] ++;
 						catalogCount[k] += itemCount;
 					}
 				}
 				
+			}
+			for(int k = 0; k<count; k++) {
+				if(custItemCount[k]>=1)
+					custCount[k]++;
 			}
 		}
 		
