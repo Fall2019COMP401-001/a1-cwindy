@@ -57,7 +57,7 @@ public class A1Adept {
 		 */
 		int indexBig = 0;
 		for(int i = 1; i< custNum; i++) {
-			if(custTot[i] > custTot[i-1]) {
+			if(custTot[i] > custTot[indexBig]) {
 				indexBig = i;
 			}
 		}
@@ -67,7 +67,7 @@ public class A1Adept {
 		 */
 		int indexSmall = 0;
 		for(int i = 1; i< custNum; i++) {
-			if(custTot[i] < custTot[i-1]) {
+			if(custTot[i] < custTot[indexSmall]) {
 				indexSmall = i;
 			}
 		}
